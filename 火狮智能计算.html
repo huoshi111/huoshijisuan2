@@ -148,6 +148,23 @@
     border-radius: 2px;
 }
     </style>
+            <script>
+            // 禁止鼠标右键菜单
+            document.addEventListener('contextmenu', function(e) {
+                e.preventDefault();
+            });
+    
+            // 禁止 F12 和特定键组合（如 Ctrl+Shift+I）
+            document.addEventListener('keydown', function(e) {
+                if (
+                    e.key === 'F12' || 
+                    (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'C' || e.key === 'J')) || 
+                    (e.ctrlKey && e.key === 'U')
+                ) {
+                    e.preventDefault();
+                }
+            });
+        </script>
 </head>
 <body>
 
